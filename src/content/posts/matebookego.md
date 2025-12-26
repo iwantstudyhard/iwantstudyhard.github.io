@@ -3,7 +3,7 @@ title: 华为matebookego的学习过程
 published: 2025-12-24
 description: ''
 image: ''
-tags: [demo,]
+tags: [总结，实践]
 category: '项目'
 draft: false 
 lang: ''
