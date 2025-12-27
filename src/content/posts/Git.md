@@ -9,5 +9,5 @@ draft: false
 lang: ''
 ---
 
-<iframe src="./pdf/Git.pdf" width=100% height=100% style="border: 0;">
+<iframe src="../pdf/Git.pdf" width=100% height=100% style="border: 0;">
 </iframe>
