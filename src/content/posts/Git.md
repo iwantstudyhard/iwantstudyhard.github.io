@@ -1,9 +1,9 @@
 ---
 title: Expressive Code Example
 published: 2024-04-10
-description: How code blocks look in Markdown using Expressive Code.
-tags: [Example]
-category: Examples
+description:  Git 的技术总结和归纳，学习 Git的基本命令和工作方式，以及作用。
+tags: [Git，总结]
+category: 技术
 draft: false
 ---
 
@@ -30,7 +30,7 @@ git 原理：
 
 ---
 git 的命令：
-Git config --global（用户)
+Git config --global（用户）
 Git config --system （系统设置）
 Git init 初始化
 Git commit - 将暂存区内容添加到仓库中。

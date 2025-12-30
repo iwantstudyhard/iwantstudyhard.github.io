@@ -1,15 +1,16 @@
 ---
-title: Expressive Code Example
-published: 2024-04-10
-description: How code blocks look in Markdown using Expressive Code.
-tags: [Example]
-category: Examples
+title: Linux 系统
+published: 2025-10-10
+description: Linux 的内核工作机制的总结。
+tags: [技术，Linux]
+category: 技术
 draft: false
 ---
 
 ``基本内核技术：  
 之前面试会问到，看书发现和操作系统十分类似，简直一样，理论照进现实了!
 ``
+
 
 ## <span style='color:#FA0000'>内存管理方式</span>：采用请求分页，虚拟存储器的方式，可以支持高并发，利用交换来实现装入更多的进程到内存，实现并发操作，对于不同的进程并不会全部读入内存，而是用到那一页就把那一页放到内存，没有位置了再换出去  
 
@@ -27,9 +28,8 @@ draft: false
 <span style='color:black'></span>  
 <span style='color:black'></span>  
 
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
+
+
 c 语言内部的函数，有些直接就是系统调用，有的是库函数，库函数是对系统调用的封装的函数，本质还是系统调用，故 c 语言十分靠近底层！用 c 来写一下比较底层的东西
 ---
 

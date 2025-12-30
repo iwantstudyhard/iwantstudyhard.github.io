@@ -1,11 +1,10 @@
 ---
-layout: post
-title: Linux 常用的命令
-date: 2025-12-28 22:43
+title: Linux 的常用命令
+published: 2025-09-10
+description: Linux 的 shell 中常用的命令方式，如何修改访问文件或修改文件夹
+tags: [技术，Linux]
 category: 技术
-author: 
-tags: [技术，Linux，学习总结]
-summary: 
+draft: false
 ---
 
 # Linux 常用命令
@@ -228,6 +227,3 @@ less [参数] 文件
 | **fuser** | `fuser <端口号>/tcp` | 查看使用端口的进程 |
 
 ---
-
-*最后更新：2025-12-28 11:33:29*
-*创建时间：2025-12-27 13:35:55*
