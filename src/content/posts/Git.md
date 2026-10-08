@@ -1,5 +1,5 @@
 ---
-title: Expressive Code Example
+title: Git 学习总结
 published: 2024-04-10
 description:  Git 的技术总结和归纳，学习 Git的基本命令和工作方式，以及作用。
 tags: [Git，总结]

@@ -2,7 +2,7 @@
 title: Draft Example
 published: 2022-07-01
 tags: [Example]
-category: Examples
+category: 例子系列
 draft: true
 ---
 
