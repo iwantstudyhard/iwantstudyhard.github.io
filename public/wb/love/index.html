@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>我们的回忆 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            min-height: 100vh;
+            color: #5c3d3d;
+            overflow-x: hidden;
+        }
+        .floating-hearts { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+        .floating-hearts span {
+            position: absolute; bottom: -40px; opacity: 0.5;
+            animation: floatUp linear infinite;
+        }
+        @keyframes floatUp {
+            to { transform: translateY(-110vh) rotate(20deg); }
+        }
+        .wrap { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 40px 20px 80px; }
+
+        /* ===== 顶部：恋爱天数 ===== */
+        .hero { text-align: center; padding: 50px 20px 30px; }
+        .hero h1 { font-family: 'Dancing Script', cursive; font-size: 2.6rem; color: #d6336c; margin-bottom: 10px; }
+        .days-number { font-size: 5rem; font-weight: 600; color: #ff4757; line-height: 1; }
+        .days-label { font-size: 1.3rem; margin: 6px 0 12px; color: #a55; }
+        .live-timer { font-size: 1rem; color: #b76e79; background: rgba(255,255,255,.55);
+            display: inline-block; padding: 8px 22px; border-radius: 999px; margin-bottom: 10px; }
+        .since { font-size: 0.95rem; color: #a55; }
+
+        /* ===== 通用卡片 ===== */
+        .card {
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 36px;
+            box-shadow: 0 8px 30px rgba(214, 51, 108, 0.15);
+            backdrop-filter: blur(6px);
+        }
+        .card h2 { font-size: 1.5rem; color: #d6336c; margin-bottom: 20px; text-align: center; }
+        .hint { text-align: center; font-size: 0.85rem; color: #c08a8a; margin-bottom: 16px; }
+
+        /* ===== 照片墙 ===== */
+        .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+        .photo-slot {
+            aspect-ratio: 1; border-radius: 14px;
+            border: 2px dashed #f3a6b5;
+            display: flex; align-items: center; justify-content: center;
+            color: #d69a9a; font-size: 0.9rem; background: rgba(255,255,255,.4);
+        }
+        .photo-slot img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+
+        /* ===== 时间线 ===== */
+        .timeline { position: relative; padding-left: 28px; }
+        .timeline::before {
+            content: ''; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 3px;
+            background: linear-gradient(#ff8fab, #ffc3a0); border-radius: 3px;
+        }
+        .tl-item { position: relative; margin-bottom: 26px; }
+        .tl-item::before {
+            content: '💗'; position: absolute; left: -28px; top: 0; font-size: 1rem;
+            background: #fff; border-radius: 50%; width: 22px; height: 22px;
+            display: flex; align-items: center; justify-content: center; font-size: 0.8rem;
+        }
+        .tl-date { font-size: 0.85rem; color: #d6336c; font-weight: 600; }
+        .tl-title { font-size: 1.05rem; font-weight: 600; margin: 4px 0; }
+        .tl-desc { font-size: 0.92rem; color: #8a5a5a; line-height: 1.7; }
+        .tl-tag { display: inline-block; font-size: 0.72rem; background: #ffe3ec; color: #d6336c;
+            border-radius: 999px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+
+        /* ===== 底部 ===== */
+        .footer { text-align: center; margin-top: 50px; }
+        .back-btn {
+            display: inline-block; background: #ff6b6b; color: #fff; text-decoration: none;
+            padding: 12px 30px; border-radius: 999px; font-size: 1rem;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .back-btn:hover { transform: scale(1.05); background: #ff8787; }
+        .footer p { margin-top: 16px; font-size: 0.85rem; color: #a55; }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="hearts"></div>
+
+    <div class="wrap">
+        <!-- ===== 恋爱天数 ===== -->
+        <div class="hero">
+            <h1>Our Love Story 💕</h1>
+            <div class="days-number" id="daysNumber">--</div>
+            <div class="days-label">我们已经相爱了这么多天</div>
+            <div class="live-timer" id="liveTimer">-- 天 -- 时 -- 分 -- 秒</div>
+            <div class="since">自 2024 年 4 月 8 日，我们在一起 💑</div>
+        </div>
+
+        <!-- ===== 照片墙 ===== -->
+        <div class="card">
+            <h2>📸 我们的照片</h2>
+            <p class="hint">把照片放进 wb/love/photos/ 文件夹，然后把下面的占位替换成 &lt;img src="photos/你的照片.jpg"&gt; 即可</p>
+            <div class="photo-grid">
+                <!-- 示例占位：替换成真实照片 -->
+                <div class="photo-slot">照片 1</div>
+                <div class="photo-slot">照片 2</div>
+                <div class="photo-slot">照片 3</div>
+                <div class="photo-slot">照片 4</div>
+                <div class="photo-slot">照片 5</div>
+                <div class="photo-slot">照片 6</div>
+            </div>
+        </div>
+
+        <!-- ===== 我们的足迹（时间线） ===== -->
+        <div class="card">
+            <h2>📝 我们的足迹</h2>
+            <p class="hint">下面的都是示例，告诉我真实的故事，我来替换成你们的回忆</p>
+            <div class="timeline">
+                <div class="tl-item">
+                    <div class="tl-date">2024 年 4 月 8 日 <span class="tl-tag">示例</span></div>
+                    <div class="tl-title">我们在一起了 💑</div>
+                    <div class="tl-desc">故事开始的地方。那一天，你成为了我生命中最重要的人。</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-date">2024 年 ×× 月 ×× 日 <span class="tl-tag">示例</span></div>
+                    <div class="tl-title">第一次旅行 ✈️</div>
+                    <div class="tl-desc">换成你们真实的回忆：去了哪里，发生了什么有趣的事。</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-date">2025 年 ×× 月 ×× 日 <span class="tl-tag">示例</span></div>
+                    <div class="tl-title">一周年纪念日 🎂</div>
+                    <div class="tl-desc">换成你们真实的回忆：怎么庆祝的，收到了什么惊喜。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a class="back-btn" href="/wb/">← 回到表白页</a>
+            <p>Made with 💖 for 王博</p>
+        </div>
+    </div>
+
+    <script>
+        // ===== 恋爱天数计算：起始日 2024-04-08 =====
+        const START_DATE = new Date('2024-04-08T00:00:00');
+
+        function pad(n) { return String(n).padStart(2, '0'); }
+
+        function updateCounter() {
+            const now = new Date();
+            const diffMs = now - START_DATE;
+            const days = Math.floor(diffMs / 86400000);
+            const hours = Math.floor(diffMs / 3600000) % 24;
+            const mins = Math.floor(diffMs / 60000) % 60;
+            const secs = Math.floor(diffMs / 1000) % 60;
+
+            document.getElementById('daysNumber').textContent = days;
+            document.getElementById('liveTimer').textContent =
+                days + ' 天 ' + pad(hours) + ' 时 ' + pad(mins) + ' 分 ' + pad(secs) + ' 秒';
+        }
+        updateCounter();
+        setInterval(updateCounter, 1000);
+
+        // ===== 背景漂浮爱心 =====
+        (function () {
+            const box = document.getElementById('hearts');
+            const emojis = ['❤️', '💖', '💝', '💗', '💓'];
+            for (let i = 0; i < 18; i++) {
+                const s = document.createElement('span');
+                s.textContent = emojis[i % emojis.length];
+                s.style.left = Math.random() * 100 + 'vw';
+                s.style.fontSize = (14 + Math.random() * 18) + 'px';
+                s.style.animationDuration = (10 + Math.random() * 10) + 's';
+                s.style.animationDelay = (Math.random() * 10) + 's';
+                box.appendChild(s);
+            }
+        })();
+    </script>
+</body>
+</html>
