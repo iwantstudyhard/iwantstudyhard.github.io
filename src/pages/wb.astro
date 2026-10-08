@@ -1,0 +1,14 @@
+---
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+---
+<MainGridLayout title="隐藏页面" description="这是一个隐藏页面">
+	<meta name="robots" content="noindex, nofollow" slot="head" />
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+		<div class="card-base z-10 px-9 py-6 relative w-full">
+			<h1 class="text-2xl font-bold mb-4">隐藏页面</h1>
+			<p class="text-neutral-600 dark:text-neutral-400">
+				这是一个通过 /wb 访问的隐藏页面，暂未放置正式内容。
+			</p>
+		</div>
+	</div>
+</MainGridLayout>

@@ -101,7 +101,10 @@ export default defineConfig({
 			},
 		}),
 		svelte(),
-		sitemap(),
+		sitemap({
+			// 隐藏页面 /wb/ 不进入 sitemap
+			filter: (page) => !/\/wb\/$/.test(page),
+		}),
 	],
 	markdown: {
 		remarkPlugins: [
