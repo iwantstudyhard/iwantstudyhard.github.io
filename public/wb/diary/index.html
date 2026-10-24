@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 恋爱日记：按 个人网站/恋爱日记.md 原文顺序整理；图片/视频来自 个人网站/素材/（经 jsDelivr 引用）。 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>恋爱日记 📖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            min-height: 100vh;
+            color: #5c3d3d;
+            overflow-x: hidden;
+        }
+        .floating-hearts { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+        .floating-hearts span { position: absolute; bottom: -40px; opacity: 0.5; animation: floatUp linear infinite; }
+        @keyframes floatUp { to { transform: translateY(-110vh) rotate(20deg); } }
+        .wrap { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 40px 20px 80px; }
+        .hero { text-align: center; padding: 50px 20px 10px; }
+        .hero h1 { font-family: 'Dancing Script', cursive; font-size: 2.6rem; color: #d6336c; margin-bottom: 10px; }
+        .hero p { font-size: 1rem; color: #a55; line-height: 1.8; }
+        .card {
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 36px;
+            box-shadow: 0 8px 30px rgba(214, 51, 108, 0.15);
+            backdrop-filter: blur(6px);
+        }
+        .card h2 { font-size: 1.5rem; color: #d6336c; margin-bottom: 20px; text-align: center; }
+        .timeline { position: relative; padding-left: 28px; }
+        .timeline::before {
+            content: ''; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 3px;
+            background: linear-gradient(#ff8fab, #ffc3a0); border-radius: 3px;
+        }
+        .tl-item { position: relative; margin-bottom: 30px; }
+        .tl-item::before {
+            content: '💗'; position: absolute; left: -28px; top: 0;
+            background: #fff; border-radius: 50%; width: 22px; height: 22px;
+            display: flex; align-items: center; justify-content: center; font-size: 0.8rem;
+        }
+        .tl-date { font-size: 0.85rem; color: #d6336c; font-weight: 600; }
+        .tl-title { font-size: 1.05rem; font-weight: 600; margin: 4px 0; }
+        .tl-desc { font-size: 0.92rem; color: #8a5a5a; line-height: 1.7; }
+        .media { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-top: 12px; }
+        .media img, .media video { width: 100%; border-radius: 12px; display: block; }
+        .media video { grid-column: 1 / -1; }
+        .media figcaption { font-size: 0.8rem; color: #c08a8a; text-align: center; margin-top: 4px; }
+        .closing { text-align: center; font-size: 1rem; color: #a55; line-height: 1.9; }
+        .footer { text-align: center; margin-top: 50px; }
+        .back-btn {
+            display: inline-block; background: #ff6b6b; color: #fff; text-decoration: none;
+            padding: 12px 30px; border-radius: 999px; font-size: 1rem; margin: 4px;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .back-btn:hover { transform: scale(1.05); background: #ff8787; }
+        .footer p { margin-top: 16px; font-size: 0.85rem; color: #a55; }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="hearts"></div>
+
+    <div class="wrap">
+        <div class="hero">
+            <h1>我们的恋爱日记 📖</h1>
+            <p>按《恋爱日记》原文的顺序整理，一篇一篇往下翻。<br>自 2024 年 4 月 8 日，我们在一起 💑</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 日记</h2>
+            <div class="timeline">
+                <div class="tl-item">
+                    <div class="tl-date">2024 年 4 月 8 日</div>
+                    <div class="tl-title">我们在一起啦 💑</div>
+                    <div class="tl-desc">2024年的四月八号我们两个在一起啦！</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-date">2024 年 4 月末</div>
+                    <div class="tl-title">第一次去旅游：连云港 ✈️</div>
+                    <div class="tl-desc">2024年的四月末我们第一次去旅游，去的是连云港。</div>
+                    <div class="media">
+                        <figure>
+                            <video controls preload="metadata" src="https://cdn.jsdelivr.net/gh/iwantstudyhard/iwantstudyhard.github.io@main/个人网站/素材/%E8%BF%9E%E4%BA%91%E6%B8%AF%E6%97%85%E6%B8%B8.mp4"></video>
+                            <figcaption>连云港旅游</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-date">2024 年 5 月 6 日</div>
+                    <div class="tl-title">一起弹吉他唱歌 🎸</div>
+                    <div class="tl-desc">五月六号，我们一起弹吉他唱歌。</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-date">2024 年 5 月 27 日</div>
+                    <div class="tl-title">黄河大合唱 🎶</div>
+                    <div class="tl-desc">五月27号的黄河大合唱，王博来接我，穿的黑色的长裙，很好看我还记得。</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-date">2024 年暑假</div>
+                    <div class="tl-title">一起去天津打工 💪</div>
+                    <div class="tl-desc">今年的暑假我们一起去了天津打工，打工真的是很苦很悲催，但是这段日子我们都很难忘。</div>
+                    <div class="media">
+                        <figure><img loading="lazy" src="https://cdn.jsdelivr.net/gh/iwantstudyhard/iwantstudyhard.github.io@main/个人网站/素材/%E5%A4%A9%E6%B4%A5.jpg" alt="天津"><figcaption>天津</figcaption></figure>
+                        <figure><img loading="lazy" src="https://cdn.jsdelivr.net/gh/iwantstudyhard/iwantstudyhard.github.io@main/个人网站/素材/%E5%A4%A9%E6%B4%A52.jpg" alt="天津"><figcaption>天津</figcaption></figure>
+                        <figure><img loading="lazy" src="https://cdn.jsdelivr.net/gh/iwantstudyhard/iwantstudyhard.github.io@main/个人网站/素材/%E5%A4%A9%E6%B4%A5%E6%89%93%E5%B7%A5.jpg" alt="天津打工"><figcaption>天津打工</figcaption></figure>
+                    </div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-date">2024 年 10 月 2 日</div>
+                    <div class="tl-title">我的生日 🎂</div>
+                    <div class="tl-desc">十月二号我过生日，我们一起吃的蛋糕，当时又迷茫自己的未来，还没钱，我们在天鹅湖公园散步，吃了青青草原蛋糕，很开心。</div>
+                    <div class="media">
+                        <figure><img loading="lazy" src="https://cdn.jsdelivr.net/gh/iwantstudyhard/iwantstudyhard.github.io@main/个人网站/素材/%E5%A4%A9%E9%B9%85%E6%B9%96%E5%85%AC%E5%9B%AD.jpg" alt="天鹅湖公园"><figcaption>天鹅湖公园</figcaption></figure>
+                        <figure><img loading="lazy" src="https://cdn.jsdelivr.net/gh/iwantstudyhard/iwantstudyhard.github.io@main/个人网站/素材/%E5%A4%A9%E9%B9%85%E6%B9%96%E5%85%AC%E5%9B%AD2.jpg" alt="天鹅湖公园"><figcaption>天鹅湖公园</figcaption></figure>
+                        <figure><img loading="lazy" src="https://cdn.jsdelivr.net/gh/iwantstudyhard/iwantstudyhard.github.io@main/个人网站/素材/%E9%9D%92%E9%9D%92%E8%8D%89%E5%8E%9F%E8%9B%8B%E7%B3%95.jpg" alt="青青草原蛋糕"><figcaption>青青草原蛋糕</figcaption></figure>
+                    </div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-date">2025 年新年之后</div>
+                    <div class="tl-title">一起买了一个相机 📷</div>
+                    <div class="tl-desc">25年的新年之后，我们一起买了一个相机，希望更好的记录下我们的青春美好。</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-date">2025 年 6 月 · 暑假</div>
+                    <div class="tl-title">考研的日子 · 一起去西安 ✈️</div>
+                    <div class="tl-desc">在此之后开始了考研生活，很苦很累很迷茫，我们的见面时间越发的少，一个月见一次面，六月放暑假的时候我们一起去了西安。</div>
+                    <div class="media">
+                        <figure><img loading="lazy" src="https://cdn.jsdelivr.net/gh/iwantstudyhard/iwantstudyhard.github.io@main/个人网站/素材/%E8%A5%BF%E5%AE%89%E6%97%85%E6%B8%B8.jpg" alt="西安旅游"><figcaption>西安旅游</figcaption></figure>
+                    </div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-date">2025 年 12 月考完 · 元旦</div>
+                    <div class="tl-title">去玉轩找王博 · 下雪的元旦 ❄️</div>
+                    <div class="tl-desc">我继续努力的学习，最终在十二月考完之后，我去玉轩找王博，在下雪的元旦吃火锅吃蛋糕，从此打开了刷单吃面包的生活。</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-date">研究生复试之后</div>
+                    <div class="tl-title">我成了研究生 · 王博开始上班 💼</div>
+                    <div class="tl-desc">接着备考我的研究生复试，虽然希望渺茫，但是老天保佑，我成为了一名研究生，王博也在年初开始上班，进入德佑公司历练。</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-date">毕业之后</div>
+                    <div class="tl-title">在新的大公司开始自己的生活 🌆</div>
+                    <div class="tl-desc">经历了毕业之后，开始在新的大公司开始自己的生活。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <p class="closing">现在我们虽然隔得很远，但是我们都在稳稳的向前迈进，会变得越来越好的。<br>恋爱日记也会随我们一起越来越长哒 💕</p>
+        </div>
+
+        <div class="footer">
+            <a class="back-btn" href="/wb/love/">← 回到我们的回忆</a>
+            <a class="back-btn" href="/wb/">← 回到表白页</a>
+            <p>Made with 💖 for 王博</p>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const box = document.getElementById('hearts');
+            const emojis = ['❤️', '💖', '💝', '💗', '💓'];
+            for (let i = 0; i < 18; i++) {
+                const s = document.createElement('span');
+                s.textContent = emojis[i % emojis.length];
+                s.style.left = Math.random() * 100 + 'vw';
+                s.style.fontSize = (14 + Math.random() * 18) + 'px';
+                s.style.animationDuration = (10 + Math.random() * 10) + 's';
+                s.style.animationDelay = (Math.random() * 10) + 's';
+                box.appendChild(s);
+            }
+        })();
+    </script>
+</body>
+</html>
